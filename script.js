@@ -1,65 +1,50 @@
-const sections = [...document.querySelectorAll("[data-section]")];
-const navLinks = [...document.querySelectorAll(".site-nav a[data-page]")];
-const menuToggle = document.querySelector(".menu-toggle");
-const siteNav = document.querySelector(".site-nav");
-const yearNode = document.getElementById("year");
+const nav = document.getElementById('site-nav');
+const toggle = document.querySelector('.nav-toggle');
+const links = [...document.querySelectorAll('.site-nav a[data-target]')];
 
-const defaultPage = "home";
-
-function getPageFromHash() {
-  const raw = window.location.hash.replace("#", "").trim().toLowerCase();
-  return sections.some(section => section.id === raw) ? raw : defaultPage;
+function closeMenu() {
+  nav.classList.remove('open');
+  toggle.setAttribute('aria-expanded', 'false');
 }
 
-function showPage(pageId, updateHash = false) {
-  const target = document.getElementById(pageId) || document.getElementById(defaultPage);
-  const activeId = target.id;
-
-  sections.forEach(section => {
-    section.classList.toggle("active-page", section.id === activeId);
+function setActive(id) {
+  links.forEach(link => {
+    const active = link.dataset.target === id;
+    link.classList.toggle('active', active);
+    if (active) link.setAttribute('aria-current', 'page');
+    else link.removeAttribute('aria-current');
   });
-
-  navLinks.forEach(link => {
-    link.classList.toggle("active", link.dataset.page === activeId);
-    if (link.dataset.page === activeId) {
-      link.setAttribute("aria-current", "page");
-    } else {
-      link.removeAttribute("aria-current");
-    }
-  });
-
-  if (updateHash && window.location.hash.replace("#", "") !== activeId) {
-    history.pushState({ page: activeId }, "", `#${activeId}`);
-  }
-
-  window.scrollTo({ top: 0, behavior: "smooth" });
-
-  siteNav.classList.remove("open");
-  menuToggle.setAttribute("aria-expanded", "false");
 }
 
-navLinks.forEach(link => {
-  link.addEventListener("click", event => {
-    event.preventDefault();
-    showPage(link.dataset.page, true);
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    setActive(link.dataset.target);
+    closeMenu();
   });
 });
 
-window.addEventListener("hashchange", () => {
-  showPage(getPageFromHash(), false);
+toggle.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', String(open));
 });
 
-window.addEventListener("popstate", () => {
-  showPage(getPageFromHash(), false);
-});
+const sectionIds = ['home', 'vision', 'mission', 'affiliates', 'contact'];
+const sectionTargets = ['home', 'vision', 'mission', 'address', 'affiliates', 'contact'];
+const observed = sectionTargets
+  .map(id => document.getElementById(id))
+  .filter(Boolean);
 
-menuToggle.addEventListener("click", () => {
-  const isOpen = siteNav.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-});
+const observer = new IntersectionObserver(entries => {
+  const visible = entries
+    .filter(entry => entry.isIntersecting)
+    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+  if (!visible) return;
+  const id = visible.target.id;
+  if (id === 'address') setActive('mission');
+  else if (sectionIds.includes(id)) setActive(id);
+}, { rootMargin: '-18% 0px -68% 0px', threshold: [0.15, 0.35, 0.6] });
 
-if (yearNode) {
-  yearNode.textContent = new Date().getFullYear();
-}
+observed.forEach(section => observer.observe(section));
 
-showPage(getPageFromHash(), false);
+const hash = location.hash.replace('#', '');
+setActive(sectionIds.includes(hash) ? hash : 'home');
