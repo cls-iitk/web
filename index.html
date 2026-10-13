@@ -1,7 +1,35 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Centre for Language Sciences | IIT Kanpur</title><meta name="description" content="Centre for Language Sciences, IIT Kanpur: research on Indian languages and applications in health, education, technology, and culture.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Public+Sans:wght@400;500;600&amp;family=Noto+Serif+Devanagari:wght@400&amp;family=Noto+Serif+Bengali:wght@400&amp;family=Noto+Serif+Tamil:wght@400&amp;family=Noto+Serif+Telugu:wght@400&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css"></head><body>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Public+Sans:wght@400;500;600&amp;family=Noto+Sans+Devanagari:wght@400;500&amp;family=Noto+Sans+Bengali:wght@400;500&amp;family=Noto+Sans+Tamil:wght@400;500&amp;family=Noto+Sans+Telugu:wght@400;500&amp;family=Noto+Sans+Kannada:wght@400;500&amp;family=Noto+Sans+Malayalam:wght@400;500&amp;family=Noto+Sans+Gujarati:wght@400;500&amp;family=Noto+Sans+Oriya:wght@400;500&amp;family=Noto+Sans+Gurmukhi:wght@400;500&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css"><style>
+/* Circular language orbit */
+.orbit-wrap{position:relative;width:min(100%,480px);aspect-ratio:1;margin:0 auto;container-type:inline-size}
+.orbit-wrap::before,.orbit-wrap::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.16)}
+.orbit-wrap::before{inset:11.5%}
+.orbit-wrap::after{inset:30%;border-color:rgba(155,28,46,.55)}
+.orbit{list-style:none;margin:0;padding:0;position:absolute;inset:0}
+.orbit li{position:absolute;width:17%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;text-align:center;line-height:1.15;
+  font:500 3.3cqw/1.15 "Noto Sans Devanagari","Noto Sans Bengali","Noto Sans Tamil","Noto Sans Telugu","Noto Sans Kannada","Noto Sans Malayalam","Noto Sans Gujarati","Noto Sans Oriya","Noto Sans Gurmukhi",sans-serif;
+  color:#fff;border:1px solid rgba(255,255,255,.3);
+  background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.2),rgba(255,255,255,.04) 70%);
+  box-shadow:0 6px 18px rgba(0,0,0,.28);transition:transform .2s,border-color .2s,background .2s}
+.orbit li:hover{transform:scale(1.1);border-color:#e0707f;background:radial-gradient(circle at 32% 28%,rgba(224,112,127,.45),rgba(155,28,46,.2) 75%)}
+.core{position:absolute;inset:36%;border-radius:50%;display:grid;place-items:center;color:#fff;
+  font:500 7cqw/1 "Noto Sans Devanagari",sans-serif;
+  background:radial-gradient(circle at 34% 28%,#c8394d,#9b1c2e 55%,#5e0f1c);box-shadow:0 0 50px rgba(155,28,46,.55)}
+@media (min-width:901px){.hero .wrap{grid-template-columns:1.05fr .95fr;align-items:center}}
+
+/* Key objectives */
+.cards.obj{list-style:none;margin:0;padding:0;grid-template-columns:repeat(6,1fr)}
+.cards.obj li{grid-column:span 2;position:relative;padding:30px 26px 34px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);transition:background .15s}
+.cards.obj li:nth-child(n+4){grid-column:span 3}
+.cards.obj li::before{content:"";position:absolute;left:26px;top:0;width:36px;height:3px;background:var(--crimson)}
+.cards.obj li:hover{background:var(--wash)}
+.cards.obj .num{display:block;font:500 2.1rem/1 var(--serif);color:var(--crimson);margin:0 0 .9rem;letter-spacing:-.01em}
+.cards.obj h3{margin:0}
+@media (max-width:900px){.cards.obj{grid-template-columns:1fr}.cards.obj li,.cards.obj li:nth-child(n+4){grid-column:auto}}
+@media (prefers-reduced-motion:reduce){.orbit li{transition:none}}
+</style></head><body>
 <a class="skip" href="#main">Skip to main content</a>
 <div class="topbar"><div class="wrap"><a href="https://www.iitk.ac.in" rel="noopener">Indian Institute of Technology Kanpur</a><a href="contact.html">Contact</a></div></div>
 <header class="site"><div class="wrap"><a class="brand" href="index.html"><strong>Centre for Language Sciences</strong><span>Indian Institute of Technology Kanpur</span></a>
@@ -11,10 +39,10 @@
 <div><p class="inst">Indian Institute of Technology Kanpur</p><h1>Centre for Language Sciences</h1>
 <p class="lede">A multidisciplinary research and development program to advance Language Science for Indian languages and enable its applications in health, education, technology, and culture.</p>
 <a class="btn" href="about.html">About the Centre</a></div>
-<ul class="scripts" aria-label="The word language in four Indian languages"><li lang="hi">भाषा<small>Hindi</small></li><li lang="bn">ভাষা<small>Bengali</small></li><li lang="ta">மொழி<small>Tamil</small></li><li lang="te">భాష<small>Telugu</small></li></ul>
+<div class="orbit-wrap"><ul class="orbit" aria-label="Indian languages written in their own scripts"><li lang="hi" style="left:41.50%;top:3.50%">हिन्दी</li><li lang="bn" style="left:59.16%;top:7.85%">বাংলা</li><li lang="ta" style="left:72.77%;top:19.91%">தமிழ்</li><li lang="te" style="left:79.22%;top:36.92%">తెలుగు</li><li lang="kn" style="left:77.03%;top:54.97%">ಕನ್ನಡ</li><li lang="mr" style="left:66.70%;top:69.94%">मराठी</li><li lang="ml" style="left:50.59%;top:78.40%">മലയാളം</li><li lang="sa" style="left:32.41%;top:78.40%">संस्कृतम्</li><li lang="gu" style="left:16.30%;top:69.94%">ગુજરાતી</li><li lang="or" style="left:5.97%;top:54.97%">ଓଡ଼ିଆ</li><li lang="bhb" style="left:3.78%;top:36.92%">भीली</li><li lang="pa" style="left:10.23%;top:19.91%">ਪੰਜਾਬੀ</li><li lang="as" style="left:23.84%;top:7.85%">অসমীয়া</li></ul><div class="core" lang="hi" aria-hidden="true">भाषा</div></div>
 </div></section>
 <section><div class="wrap"><div class="cols"><h2>Welcome</h2><div class="prose"><p>Welcome to the Centre for Language Sciences (CLS) at IIT Kanpur! The CLS is a multidisciplinary research and development program to advance Language Science for Indian languages and enable its applications in health, education, technology, and culture. The Centre was established with funding from the Anusandhan National Research Foundation (ANRF) under its flagship Convergence Research Centres of Excellence (CoEs) program.</p><p>The Centre aims to undertake extensive experimental, computational, and theoretical research on Indian languages (ILs) to understand how ILs are processed in the mind, how they evolve, how they differ, how they converge, and how they are distributed structurally, and use these research insights to develop solutions for assessment of language proficiency, diagnosis and treatment of language disorders, second language learning and education, mental health and emotional assessment, and NLP and AI in low-resource Indian languages.</p><p>The Centre is led by a group of researchers from multiple disciplines (Cognitive Science, Linguistics, Computer Science, and Philosophy) at IIT Kanpur.</p><p>If you want to work with us, feel free to <a href="https://sites.google.com/view/language-sciences-centre" rel="noopener">apply here</a>.</p></div></div></div></section>
-<section><div class="wrap"><div class="cols"><h2>Funding</h2><div class="prose"><p>The Centre was established with funding from the Anusandhan National Research Foundation (ANRF) under its flagship Convergence Research Centres of Excellence (CoEs) program.</p></div></div></div></section><section><div class="wrap"><div class="cols"><h2>Explore</h2><div class="cards" style="grid-template-columns:repeat(3,1fr)">
+<section><div class="wrap"><div class="cols"><h2>Funding</h2><div class="prose"><p>The Centre was established with funding from the Anusandhan National Research Foundation (ANRF) under its flagship Convergence Research Centres of Excellence (CoEs) program.</p></div></div></div></section><section><div class="wrap"><div class="cols"><h2>Key Objectives</h2><ol class="cards obj"><li><span class="num">01</span><h3>Proficiency assessment in Indian Languages</h3></li><li><span class="num">02</span><h3>Diagnosis tools for language disorders</h3></li><li><span class="num">03</span><h3>Corpus quality assessment for low-resource languages</h3></li><li><span class="num">04</span><h3>Language learning solutions for Indian languages</h3></li><li><span class="num">05</span><h3>Self-administered language therapy tools</h3></li></ol></div></div></section><section><div class="wrap"><div class="cols"><h2>Explore</h2><div class="cards">
 <a href="about.html"><h3>About</h3><p>Why we matter, our vision, and our mission.</p></a>
 <a href="publications.html"><h3>Publications</h3><p>Papers and reports from the Centre.</p></a>
 <a href="projects.html"><h3>Projects</h3><p>Research and development work at the Centre.</p></a>
