@@ -2,21 +2,18 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Centre for Language Sciences | IIT Kanpur</title><meta name="description" content="Centre for Language Sciences, IIT Kanpur: research on Indian languages and applications in health, education, technology, and culture.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Public+Sans:wght@400;500;600&amp;family=Noto+Sans+Devanagari:wght@400;500&amp;family=Noto+Sans+Bengali:wght@400;500&amp;family=Noto+Sans+Tamil:wght@400;500&amp;family=Noto+Sans+Telugu:wght@400;500&amp;family=Noto+Sans+Kannada:wght@400;500&amp;family=Noto+Sans+Malayalam:wght@400;500&amp;family=Noto+Sans+Gujarati:wght@400;500&amp;family=Noto+Sans+Oriya:wght@400;500&amp;family=Noto+Sans+Gurmukhi:wght@400;500&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css"><style>
-/* Circular language orbit */
-.orbit-wrap{position:relative;width:min(100%,480px);aspect-ratio:1;margin:0 auto;container-type:inline-size}
-.orbit-wrap::before,.orbit-wrap::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.16)}
-.orbit-wrap::before{inset:11.5%}
-.orbit-wrap::after{inset:30%;border-color:rgba(155,28,46,.55)}
+/* Spherical language globe */
+.orbit-wrap{position:relative;width:min(100%,480px);aspect-ratio:1;margin:0 auto;container-type:inline-size;cursor:grab;touch-action:pan-y;user-select:none}
+.orbit-wrap:active{cursor:grabbing}
+.globe-body{position:absolute;inset:6%;border-radius:50%;
+  background:radial-gradient(circle at 33% 27%,rgba(255,255,255,.26),rgba(255,255,255,.07) 38%,rgba(255,255,255,0) 62%),radial-gradient(circle at 50% 50%,#17325f,#0a1930 78%);
+  border:1px solid rgba(255,255,255,.22);
+  box-shadow:inset -34px -46px 80px rgba(0,0,0,.5),0 0 80px rgba(155,28,46,.38),0 30px 60px rgba(0,0,0,.35)}
+.graticule{position:absolute;inset:6%;width:88%;height:88%;color:rgba(255,255,255,.14);pointer-events:none}
 .orbit{list-style:none;margin:0;padding:0;position:absolute;inset:0}
-.orbit li{position:absolute;width:17%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;text-align:center;line-height:1.15;
-  font:500 3.3cqw/1.15 "Noto Sans Devanagari","Noto Sans Bengali","Noto Sans Tamil","Noto Sans Telugu","Noto Sans Kannada","Noto Sans Malayalam","Noto Sans Gujarati","Noto Sans Oriya","Noto Sans Gurmukhi",sans-serif;
-  color:#fff;border:1px solid rgba(255,255,255,.3);
-  background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.2),rgba(255,255,255,.04) 70%);
-  box-shadow:0 6px 18px rgba(0,0,0,.28);transition:transform .2s,border-color .2s,background .2s}
-.orbit li:hover{transform:scale(1.1);border-color:#e0707f;background:radial-gradient(circle at 32% 28%,rgba(224,112,127,.45),rgba(155,28,46,.2) 75%)}
-.core{position:absolute;inset:36%;border-radius:50%;display:grid;place-items:center;color:#fff;
-  font:500 7cqw/1 "Noto Sans Devanagari",sans-serif;
-  background:radial-gradient(circle at 34% 28%,#c8394d,#9b1c2e 55%,#5e0f1c);box-shadow:0 0 50px rgba(155,28,46,.55)}
+.orbit li{position:absolute;white-space:nowrap;color:#fff;
+  font:500 4.3cqw/1.2 "Noto Sans Devanagari","Noto Sans Bengali","Noto Sans Tamil","Noto Sans Telugu","Noto Sans Kannada","Noto Sans Malayalam","Noto Sans Gujarati","Noto Sans Oriya","Noto Sans Gurmukhi",sans-serif;
+  text-shadow:0 2px 10px rgba(0,0,0,.55);will-change:transform,opacity}
 @media (min-width:901px){.hero .wrap{grid-template-columns:1.05fr .95fr;align-items:center}}
 
 /* Key objectives */
@@ -28,7 +25,6 @@
 .cards.obj .num{display:block;font:500 2.1rem/1 var(--serif);color:var(--crimson);margin:0 0 .9rem;letter-spacing:-.01em}
 .cards.obj h3{margin:0}
 @media (max-width:900px){.cards.obj{grid-template-columns:1fr}.cards.obj li,.cards.obj li:nth-child(n+4){grid-column:auto}}
-@media (prefers-reduced-motion:reduce){.orbit li{transition:none}}
 </style></head><body>
 <a class="skip" href="#main">Skip to main content</a>
 <div class="topbar"><div class="wrap"><a href="https://www.iitk.ac.in" rel="noopener">Indian Institute of Technology Kanpur</a><a href="contact.html">Contact</a></div></div>
@@ -39,7 +35,7 @@
 <div><p class="inst">Indian Institute of Technology Kanpur</p><h1>Centre for Language Sciences</h1>
 <p class="lede">A multidisciplinary research and development program to advance Language Science for Indian languages and enable its applications in health, education, technology, and culture.</p>
 <a class="btn" href="about.html">About the Centre</a></div>
-<div class="orbit-wrap"><ul class="orbit" aria-label="Indian languages written in their own scripts"><li lang="hi" style="left:41.50%;top:3.50%">हिन्दी</li><li lang="bn" style="left:59.16%;top:7.85%">বাংলা</li><li lang="ta" style="left:72.77%;top:19.91%">தமிழ்</li><li lang="te" style="left:79.22%;top:36.92%">తెలుగు</li><li lang="kn" style="left:77.03%;top:54.97%">ಕನ್ನಡ</li><li lang="mr" style="left:66.70%;top:69.94%">मराठी</li><li lang="ml" style="left:50.59%;top:78.40%">മലയാളം</li><li lang="sa" style="left:32.41%;top:78.40%">संस्कृतम्</li><li lang="gu" style="left:16.30%;top:69.94%">ગુજરાતી</li><li lang="or" style="left:5.97%;top:54.97%">ଓଡ଼ିଆ</li><li lang="bhb" style="left:3.78%;top:36.92%">भीली</li><li lang="pa" style="left:10.23%;top:19.91%">ਪੰਜਾਬੀ</li><li lang="as" style="left:23.84%;top:7.85%">অসমীয়া</li></ul><div class="core" lang="hi" aria-hidden="true">भाषा</div></div>
+<div class="orbit-wrap globe"><div class="globe-body"></div><svg class="graticule" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width=".35"><circle cx="50" cy="50" r="49.8"/><ellipse cx="50" cy="50" rx="12.9" ry="49.8"/><ellipse cx="50" cy="50" rx="25" ry="49.8"/><ellipse cx="50" cy="50" rx="35.4" ry="49.8"/><ellipse cx="50" cy="50" rx="43.3" ry="49.8"/><ellipse cx="50" cy="50" rx="48.3" ry="49.8"/><line x1="50" y1="0" x2="50" y2="100"/><ellipse cx="50" cy="50" rx="49.8" ry="9"/><ellipse cx="50" cy="25" rx="43.3" ry="7.5"/><ellipse cx="50" cy="75" rx="43.3" ry="7.5"/><ellipse cx="50" cy="6.7" rx="25" ry="4"/><ellipse cx="50" cy="93.3" rx="25" ry="4"/></svg><ul class="orbit" aria-label="Indian languages written in their own scripts"><li lang="hi" style="left:64.62%;top:82.57%;transform:translate(-50%,-50%) scale(0.956);opacity:0.763;z-index:67">हिन्दी</li><li lang="bn" style="left:32.10%;top:71.06%;transform:translate(-50%,-50%) scale(1.042);opacity:0.887;z-index:84">বাংলা</li><li lang="ta" style="left:52.62%;top:82.78%;transform:translate(-50%,-50%) scale(0.745);opacity:0.460;z-index:25">தமிழ்</li><li lang="te" style="left:70.51%;top:56.36%;transform:translate(-50%,-50%) scale(1.076);opacity:0.937;z-index:91">తెలుగు</li><li lang="kn" style="left:14.40%;top:63.19%;transform:translate(-50%,-50%) scale(0.860);opacity:0.626;z-index:48">ಕನ್ನಡ</li><li lang="mr" style="left:81.68%;top:62.90%;transform:translate(-50%,-50%) scale(0.761);opacity:0.483;z-index:28">मराठी</li><li lang="ml" style="left:40.14%;top:36.39%;transform:translate(-50%,-50%) scale(1.094);opacity:0.963;z-index:95">മലയാളം</li><li lang="sa" style="left:32.69%;top:56.93%;transform:translate(-50%,-50%) scale(0.652);opacity:0.326;z-index:6">संस्कृतम्</li><li lang="gu" style="left:83.96%;top:34.54%;transform:translate(-50%,-50%) scale(0.917);opacity:0.708;z-index:59">ગુજરાતી</li><li lang="or" style="left:18.84%;top:28.94%;transform:translate(-50%,-50%) scale(0.906);opacity:0.692;z-index:57">ଓଡ଼ିଆ</li><li lang="bhb" style="left:62.70%;top:38.35%;transform:translate(-50%,-50%) scale(0.647);opacity:0.319;z-index:5">भीली</li><li lang="pa" style="left:57.27%;top:14.26%;transform:translate(-50%,-50%) scale(0.940);opacity:0.741;z-index:64">ਪੰਜਾਬੀ</li><li lang="as" style="left:37.35%;top:20.14%;transform:translate(-50%,-50%) scale(0.740);opacity:0.452;z-index:24">অসমীয়া</li></ul></div>
 </div></section>
 <section><div class="wrap"><div class="cols"><h2>Welcome</h2><div class="prose"><p>Welcome to the Centre for Language Sciences (CLS) at IIT Kanpur! The CLS is a multidisciplinary research and development program to advance Language Science for Indian languages and enable its applications in health, education, technology, and culture. The Centre was established with funding from the Anusandhan National Research Foundation (ANRF) under its flagship Convergence Research Centres of Excellence (CoEs) program.</p><p>The Centre aims to undertake extensive experimental, computational, and theoretical research on Indian languages (ILs) to understand how ILs are processed in the mind, how they evolve, how they differ, how they converge, and how they are distributed structurally, and use these research insights to develop solutions for assessment of language proficiency, diagnosis and treatment of language disorders, second language learning and education, mental health and emotional assessment, and NLP and AI in low-resource Indian languages.</p><p>The Centre is led by a group of researchers from multiple disciplines (Cognitive Science, Linguistics, Computer Science, and Philosophy) at IIT Kanpur.</p><p>If you want to work with us, feel free to <a href="https://sites.google.com/view/language-sciences-centre" rel="noopener">apply here</a>.</p></div></div></div></section>
 <section><div class="wrap"><div class="cols"><h2>Funding</h2><div class="prose"><p>The Centre was established with funding from the Anusandhan National Research Foundation (ANRF) under its flagship Convergence Research Centres of Excellence (CoEs) program.</p></div></div></div></section><section><div class="wrap"><div class="cols"><h2>Key Objectives</h2><ol class="cards obj"><li><span class="num">01</span><h3>Proficiency assessment in Indian Languages</h3></li><li><span class="num">02</span><h3>Diagnosis tools for language disorders</h3></li><li><span class="num">03</span><h3>Corpus quality assessment for low-resource languages</h3></li><li><span class="num">04</span><h3>Language learning solutions for Indian languages</h3></li><li><span class="num">05</span><h3>Self-administered language therapy tools</h3></li></ol></div></div></section><section><div class="wrap"><div class="cols"><h2>Explore</h2><div class="cards">
@@ -54,4 +50,27 @@
 <div><h2>Centre for Language Sciences</h2><address>4th floor, Engineering Science Building 2,<br>Indian Institute of Technology Kanpur<br>Kanpur 208016, India<br><a href="https://maps.app.goo.gl/w1q9P5pQLy14W9r66" rel="noopener">Directions</a></address></div>
 <div><h2>Affiliates</h2><ul><li>N.P. Sudharashana</li><li>Ark Verma</li><li>Lalit Saraswat</li><li>Himanshu Yadav</li><li>Arnab Bhattacharya</li><li>Chaithra Puttuswamy</li></ul></div>
 <div><h2>Contact us</h2><ul><li><a href="mailto:arkverma@iitk.ac.in">arkverma@iitk.ac.in</a></li><li><a href="mailto:himanshu@iitk.ac.in">himanshu@iitk.ac.in</a></li></ul></div>
-</div><div class="legal"><div class="wrap">&copy; Indian Institute of Technology Kanpur</div></div></footer></body></html>
+</div><div class="legal"><div class="wrap">&copy; Indian Institute of Technology Kanpur</div></div></footer><script>
+(function(){
+var ul=document.querySelector('.orbit');if(!ul)return;
+var els=[].slice.call(ul.children),n=els.length,tilt=.38,ct=Math.cos(tilt),st=Math.sin(tilt),a=0,drag=false,hover=false,lx=0;
+var pts=els.map(function(_,i){var y=1-2*(i+.5)/n,r=Math.sqrt(1-y*y),t=i*2.399963;return[r*Math.cos(t),y,r*Math.sin(t)];});
+function render(){
+  var ca=Math.cos(a),sa=Math.sin(a);
+  els.forEach(function(el,i){
+    var p=pts[i],x1=p[0]*ca+p[2]*sa,z1=-p[0]*sa+p[2]*ca,y2=p[1]*ct-z1*st,z2=p[1]*st+z1*ct,d=(z2+1)/2;
+    el.style.left=(50+x1*38)+'%';el.style.top=(50+y2*38)+'%';
+    el.style.transform='translate(-50%,-50%) scale('+(0.62+0.5*d).toFixed(3)+')';
+    el.style.opacity=(0.28+0.72*d).toFixed(3);el.style.zIndex=Math.round(d*100);
+  });
+}
+var wrap=ul.parentNode,reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+wrap.addEventListener('pointerenter',function(){hover=true;});
+wrap.addEventListener('pointerleave',function(){hover=false;drag=false;});
+wrap.addEventListener('pointerdown',function(e){drag=true;lx=e.clientX;});
+window.addEventListener('pointerup',function(){drag=false;});
+wrap.addEventListener('pointermove',function(e){if(drag){a+=(e.clientX-lx)*.009;lx=e.clientX;if(reduce)render();}});
+function tick(){if(!drag&&!hover)a+=.004;render();requestAnimationFrame(tick);}
+render();if(!reduce)requestAnimationFrame(tick);
+})();
+</script></body></html>
