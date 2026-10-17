@@ -1,7 +1,5 @@
 # Centre for Language Sciences — IIT Kanpur
 
-TU-Berlin-style institutional website redesign.
-
 ## Pages
 - index.html
 - about.html
